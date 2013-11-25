@@ -1,4 +1,5 @@
+<% heading ||= "h4" %>
 <section class="route">
-  <h4>Route</h4>
-  <pre><%= "#{request['request_method']} #{request['request_path']}" %></pre>
+  <<%= heading %>>Route</<%= heading %>>
+  <pre><%= "#{method} #{url}" %></pre>
 </section>
