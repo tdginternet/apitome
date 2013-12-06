@@ -8,15 +8,15 @@
         <% end %>
       </tr>
       <% params.each do |param| %>
-        <tr>
-          <td class="name <%= param['required'] ? 'required' : '' %>">
+        <tr class="<%= param['required'] ? 'required' : 'optional' %>">
+          <td class="name">
             <% if param['scope'] %>
               <%= "#{param['scope']}[#{param['name']}]" %>
             <% else %>
               <%= param['name'] %>
             <% end %>
           </td>
-          <td class="description"><%= param['description'] %></td>
+          <td class="description"><%= param['description'] %><%= ' (optional)' unless param['required'] %></td>
           <% param_extras(params).each do |extra| %>
             <td class="extra"><%= param[extra] %></td>
           <% end %>

@@ -78,6 +78,10 @@ pre code {
   font-size: 90%;
 }
 
+.optional td {
+  font-style: italic;
+}
+
 body.single-page .docs-section section.readme article {
   margin-top: -50px;
   margin-bottom: -20px;
