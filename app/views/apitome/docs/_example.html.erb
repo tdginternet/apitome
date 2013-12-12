@@ -7,31 +7,21 @@
 
 <h3>Examples</h3>
 <% example['requests'].each_with_index do |request, index| %>
-  <div id="<%= "request-#{index}" %>">
-    <ul class="nav nav-tabs">
-      <li class="active"><a href="#request-<%= index %>-tab" data-toggle="tab">Request</a></li>
-      <li><a href="#response-<%= index %>-tab" data-toggle="tab">Response</a></li>
-    </ul>
-
-    <div class="tab-content">
-      <div class="tab-pane active" id="request-<%= index %>-tab">
-        <div class="request">
-          <%= render partial: 'apitome/docs/route',    locals: {method: request['request_method'], url: request['request_path']} %>
-          <%= render partial: 'apitome/docs/headers',  locals: {request: request, index: index, headers: request['request_headers']} %>
-          <%= render partial: 'apitome/docs/query',    locals: {request: request, index: index} unless request['request_query_parameters'].empty? %>
-          <%= render partial: 'apitome/docs/body',     locals: {request: request, index: index, body: request['request_body'], type: request['request_content_type']} if request['request_body'] %>
-          <%= render partial: 'apitome/docs/curl',     locals: {request: request, index: index} if request['curl'] %>
-        </div>
-      </div>
-
-      <div class="tab-pane" id="response-<%= index %>-tab">
-        <div class="response">
-          <%= render partial: 'apitome/docs/status',   locals: {request: request, index: index} %>
-          <%= render partial: 'apitome/docs/headers',  locals: {request: request, index: index, headers: request['response_headers']} %>
-          <%= render partial: 'apitome/docs/body',     locals: {request: request, index: index, body: request['response_body'], type: request['response_content_type']} if request['response_body'] %>
-        </div>
-      </div>
+  <div>
+    <h4>Request</h4>
+    <div class="request">
+      <%= render partial: 'apitome/docs/route',    locals: {method: request['request_method'], url: request['request_path']} %>
+      <%= render partial: 'apitome/docs/headers',  locals: {request: request, index: index, headers: request['request_headers']} %>
+      <%= render partial: 'apitome/docs/query',    locals: {request: request, index: index} unless request['request_query_parameters'].empty? %>
+      <%= render partial: 'apitome/docs/body',     locals: {request: request, index: index, body: request['request_body'], type: request['request_content_type']} if request['request_body'] %>
+      <%= render partial: 'apitome/docs/curl',     locals: {request: request, index: index} if request['curl'] %>
     </div>
 
+    <h4>Response</h4>
+    <div class="response">
+      <%= render partial: 'apitome/docs/status',   locals: {request: request, index: index} %>
+      <%= render partial: 'apitome/docs/headers',  locals: {request: request, index: index, headers: request['response_headers']} %>
+      <%= render partial: 'apitome/docs/body',     locals: {request: request, index: index, body: request['response_body'], type: request['response_content_type']} if request['response_body'] %>
+    </div>
   </div>
 <% end %>
