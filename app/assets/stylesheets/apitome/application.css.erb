@@ -1,7 +1,8 @@
 /*
  *= require apitome/bootstrap.min
- *= require apitome/highlight_themes/default
  */
+
+<% require_asset "apitome/highlight_themes/#{Apitome.configuration.code_theme}" %>
 
 body {
   position: relative;
