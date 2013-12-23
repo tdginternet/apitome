@@ -36,7 +36,7 @@ class Apitome::DocsController < ActionController::Base
   end
 
   def formatted_body(body, type)
-    if type =~ /json/
+    if type =~ /json/ && !body.blank?
       JSON.pretty_generate(JSON.parse(body))
     else
       body
