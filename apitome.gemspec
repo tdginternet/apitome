@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ['jejacks0n']
   s.email       = ['info@modeset.com']
   s.homepage    = 'https://github.com/modeset/apitome'
-  s.summary     = 'Apitome: An API documentation reader RSpec API Documentation'
+  s.summary     = 'Apitome: /iˈpitəmē/ An API documentation reader RSpec API Documentation'
   s.description = 'API documentation renderer for Rails using RSpec API Documentation JSON output'
 
   s.files       = Dir['{app,config,lib,vendor}/**/*'] + ['MIT.LICENSE', 'README.md']
