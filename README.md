@@ -1,3 +1,9 @@
+# :rotating_light: WARNING
+
+**This repository is DEPRECATED and not maintained anymore.**
+
+--- 
+
 Apitome
 =======
 
